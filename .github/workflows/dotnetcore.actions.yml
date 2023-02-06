@@ -24,4 +24,4 @@ jobs:
       with:
         name: SECRET1
         value: ${{ env.x }}
-        pa_token: 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
+        pa_token: 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
