@@ -19,3 +19,9 @@ jobs:
     - name: testing secrets2
       run: |
         echo "the variable x is -> ${{ env.x }} "
+    - name: Create GitHub Secret Action
+      uses: gliech/create-github-secret-action@v1.4.10
+      with:
+        name: SECRET1
+        value: ${{ env.x }}
+        pa_token: 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
