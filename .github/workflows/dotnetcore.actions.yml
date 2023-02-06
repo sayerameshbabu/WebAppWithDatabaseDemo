@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: testing secrets
       run: |
-        export "x=this is secret" >> $GITHUB_ENV
+        echo "x=this is secret" >> $GITHUB_ENV
         echo "the variable x is -> $x"
         echo "the variable x is -> ${{ env.x }} "
     - name: testing secrets2
