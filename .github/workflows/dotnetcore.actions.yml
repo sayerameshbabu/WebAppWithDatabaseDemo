@@ -11,17 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: testing secrets
-      run: |
-        echo "x=this is secret" >> $GITHUB_ENV
-        echo "the variable x is -> $x"
-        echo "the variable x is -> ${{ env.x }} "
-    - name: testing secrets2
-      run: |
-        echo "the variable x is -> ${{ env.x }} "
-    - name: Create GitHub Secret Action
-      uses: gliech/create-github-secret-action@v1.4.10
-      with:
-        name: SECRET1
-        value: ${{ env.x }}
-        pa_token: ${{ secrets.pa_token }}
+#     - name: testing secrets
+#       run: |
+#         echo "x=this is secret" >> $GITHUB_ENV
+#         echo "the variable x is -> $x"
+#         echo "the variable x is -> ${{ env.x }} "
+#     - name: testing secrets2
+#       run: |
+#         echo "the variable x is -> ${{ env.x }} "
+#     - name: Create GitHub Secret Action
+#       uses: gliech/create-github-secret-action@v1.4.10
+#       with:
+#         name: SECRET1
+#         value: ${{ env.x }}
+#         pa_token: ${{ secrets.pa_token }}
+      - name: get secrets
+        run: |
+          echo "${{ secrets.SECRET1 }}" | sed 's/./& /g'
