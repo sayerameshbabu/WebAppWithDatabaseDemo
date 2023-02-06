@@ -16,4 +16,8 @@ jobs:
         export x="this is for testing secrets"
         echo "the variable x is -> $x"
         echo "the variable x is -> ${{ env.x }} "
+    - name: testing secrets2
+      run: |
+        echo "the variable x is -> $x"
+        echo "the variable x is -> ${{ env.x }} "
         
